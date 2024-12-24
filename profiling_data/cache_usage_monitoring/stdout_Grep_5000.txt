@@ -1,0 +1,249 @@
+Grep(/home/will/data/benchspark/GrepData, Computer, /home/will/data/benchspark/GrepOut)
+
+24/04/11 09:51:25 INFO SparkContext: Running Spark version 3.3.2
+24/04/11 09:51:25 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/04/11 09:51:25 INFO ResourceUtils: ==============================================================
+24/04/11 09:51:25 INFO ResourceUtils: No custom resources configured for spark.driver.
+24/04/11 09:51:25 INFO ResourceUtils: ==============================================================
+24/04/11 09:51:25 INFO SparkContext: Submitted application: Grep
+24/04/11 09:51:25 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+24/04/11 09:51:25 INFO ResourceProfile: Limiting resource is cpu
+24/04/11 09:51:25 INFO ResourceProfileManager: Added ResourceProfile id: 0
+24/04/11 09:51:25 INFO SecurityManager: Changing view acls to: will
+24/04/11 09:51:25 INFO SecurityManager: Changing modify acls to: will
+24/04/11 09:51:25 INFO SecurityManager: Changing view acls groups to: 
+24/04/11 09:51:25 INFO SecurityManager: Changing modify acls groups to: 
+24/04/11 09:51:25 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(will); groups with view permissions: Set(); users  with modify permissions: Set(will); groups with modify permissions: Set()
+24/04/11 09:51:25 INFO Utils: Successfully started service 'sparkDriver' on port 41061.
+24/04/11 09:51:25 INFO SparkEnv: Registering MapOutputTracker
+24/04/11 09:51:25 INFO SparkEnv: Registering BlockManagerMaster
+24/04/11 09:51:25 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+24/04/11 09:51:25 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+24/04/11 09:51:25 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+24/04/11 09:51:25 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-6a1fb21b-57ab-4599-a94f-d3964d4882af
+24/04/11 09:51:25 INFO MemoryStore: MemoryStore started with capacity 12.6 GiB
+24/04/11 09:51:25 INFO SparkEnv: Registering OutputCommitCoordinator
+24/04/11 09:51:25 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+24/04/11 09:51:26 INFO SparkContext: Added JAR file:/home/will/.sync/files/uni/research/c5-experiments/c5-experiments.git/spark/target/scala-2.12/benchspark_2.12-1.0.jar at spark://amigo:41061/jars/benchspark_2.12-1.0.jar with timestamp 1712821885143
+24/04/11 09:51:26 INFO Executor: Starting executor ID driver on host amigo
+24/04/11 09:51:26 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+24/04/11 09:51:26 INFO Executor: Fetching spark://amigo:41061/jars/benchspark_2.12-1.0.jar with timestamp 1712821885143
+24/04/11 09:51:26 INFO TransportClientFactory: Successfully created connection to amigo/130.149.248.223:41061 after 25 ms (0 ms spent in bootstraps)
+24/04/11 09:51:26 INFO Utils: Fetching spark://amigo:41061/jars/benchspark_2.12-1.0.jar to /tmp/spark-e12188bd-4c43-4680-861c-19858e94b6a4/userFiles-5c94dce2-9f56-416e-bee9-e99faa5e304f/fetchFileTemp1940626578329456621.tmp
+24/04/11 09:51:26 INFO Executor: Adding file:/tmp/spark-e12188bd-4c43-4680-861c-19858e94b6a4/userFiles-5c94dce2-9f56-416e-bee9-e99faa5e304f/benchspark_2.12-1.0.jar to class loader
+24/04/11 09:51:26 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42945.
+24/04/11 09:51:26 INFO NettyBlockTransferService: Server created on amigo:42945
+24/04/11 09:51:26 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+24/04/11 09:51:26 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, amigo, 42945, None)
+24/04/11 09:51:26 INFO BlockManagerMasterEndpoint: Registering block manager amigo:42945 with 12.6 GiB RAM, BlockManagerId(driver, amigo, 42945, None)
+24/04/11 09:51:26 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, amigo, 42945, None)
+24/04/11 09:51:26 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, amigo, 42945, None)
+24/04/11 09:51:26 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+24/04/11 09:51:26 INFO SharedState: Warehouse path is 'file:/home/will/.sync/files/uni/research/c5-experiments/c5-experiments.git/run_scripts/spark-warehouse'.
+24/04/11 09:51:27 INFO InMemoryFileIndex: It took 38 ms to list leaf files for 1 paths.
+24/04/11 09:51:29 INFO FileSourceStrategy: Pushed Filters: 
+24/04/11 09:51:29 INFO FileSourceStrategy: Post-Scan Filters: 
+24/04/11 09:51:29 INFO FileSourceStrategy: Output Data Schema: struct<value: string>
+24/04/11 09:51:29 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:29 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:29 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:30 INFO CodeGenerator: Code generated in 145.34084 ms
+24/04/11 09:51:30 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 350.0 KiB, free 12.6 GiB)
+24/04/11 09:51:30 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.0 KiB, free 12.6 GiB)
+24/04/11 09:51:30 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on amigo:42945 (size: 34.0 KiB, free: 12.6 GiB)
+24/04/11 09:51:30 INFO SparkContext: Created broadcast 0 from text at Grep.scala:26
+24/04/11 09:51:30 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4225866 bytes, open cost is considered as scanning 4194304 bytes.
+24/04/11 09:51:30 INFO SparkContext: Starting job: text at Grep.scala:26
+24/04/11 09:51:30 INFO DAGScheduler: Got job 0 (text at Grep.scala:26) with 16 output partitions
+24/04/11 09:51:30 INFO DAGScheduler: Final stage: ResultStage 0 (text at Grep.scala:26)
+24/04/11 09:51:30 INFO DAGScheduler: Parents of final stage: List()
+24/04/11 09:51:30 INFO DAGScheduler: Missing parents: List()
+24/04/11 09:51:30 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[2] at text at Grep.scala:26), which has no missing parents
+24/04/11 09:51:30 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 211.4 KiB, free 12.6 GiB)
+24/04/11 09:51:30 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 75.8 KiB, free 12.6 GiB)
+24/04/11 09:51:30 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on amigo:42945 (size: 75.8 KiB, free: 12.6 GiB)
+24/04/11 09:51:30 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1513
+24/04/11 09:51:30 INFO DAGScheduler: Submitting 16 missing tasks from ResultStage 0 (MapPartitionsRDD[2] at text at Grep.scala:26) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+24/04/11 09:51:30 INFO TaskSchedulerImpl: Adding task set 0.0 with 16 tasks resource profile 0
+24/04/11 09:51:30 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (amigo, executor driver, partition 0, PROCESS_LOCAL, 4970 bytes) taskResourceAssignments Map()
+24/04/11 09:51:30 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (amigo, executor driver, partition 1, PROCESS_LOCAL, 4970 bytes) taskResourceAssignments Map()
+24/04/11 09:51:30 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2) (amigo, executor driver, partition 2, PROCESS_LOCAL, 4970 bytes) taskResourceAssignments Map()
+24/04/11 09:51:30 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3) (amigo, executor driver, partition 3, PROCESS_LOCAL, 4970 bytes) taskResourceAssignments Map()
+24/04/11 09:51:30 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4) (amigo, executor driver, partition 4, PROCESS_LOCAL, 4970 bytes) taskResourceAssignments Map()
+24/04/11 09:51:30 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5) (amigo, executor driver, partition 5, PROCESS_LOCAL, 4970 bytes) taskResourceAssignments Map()
+24/04/11 09:51:30 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6) (amigo, executor driver, partition 6, PROCESS_LOCAL, 4970 bytes) taskResourceAssignments Map()
+24/04/11 09:51:30 INFO TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7) (amigo, executor driver, partition 7, PROCESS_LOCAL, 4970 bytes) taskResourceAssignments Map()
+24/04/11 09:51:30 INFO TaskSetManager: Starting task 8.0 in stage 0.0 (TID 8) (amigo, executor driver, partition 8, PROCESS_LOCAL, 4970 bytes) taskResourceAssignments Map()
+24/04/11 09:51:30 INFO TaskSetManager: Starting task 9.0 in stage 0.0 (TID 9) (amigo, executor driver, partition 9, PROCESS_LOCAL, 4970 bytes) taskResourceAssignments Map()
+24/04/11 09:51:30 INFO TaskSetManager: Starting task 10.0 in stage 0.0 (TID 10) (amigo, executor driver, partition 10, PROCESS_LOCAL, 4970 bytes) taskResourceAssignments Map()
+24/04/11 09:51:30 INFO TaskSetManager: Starting task 11.0 in stage 0.0 (TID 11) (amigo, executor driver, partition 11, PROCESS_LOCAL, 4970 bytes) taskResourceAssignments Map()
+24/04/11 09:51:30 INFO TaskSetManager: Starting task 12.0 in stage 0.0 (TID 12) (amigo, executor driver, partition 12, PROCESS_LOCAL, 4970 bytes) taskResourceAssignments Map()
+24/04/11 09:51:30 INFO TaskSetManager: Starting task 13.0 in stage 0.0 (TID 13) (amigo, executor driver, partition 13, PROCESS_LOCAL, 4970 bytes) taskResourceAssignments Map()
+24/04/11 09:51:30 INFO TaskSetManager: Starting task 14.0 in stage 0.0 (TID 14) (amigo, executor driver, partition 14, PROCESS_LOCAL, 4970 bytes) taskResourceAssignments Map()
+24/04/11 09:51:30 INFO TaskSetManager: Starting task 15.0 in stage 0.0 (TID 15) (amigo, executor driver, partition 15, PROCESS_LOCAL, 4970 bytes) taskResourceAssignments Map()
+24/04/11 09:51:30 INFO Executor: Running task 13.0 in stage 0.0 (TID 13)
+24/04/11 09:51:30 INFO Executor: Running task 11.0 in stage 0.0 (TID 11)
+24/04/11 09:51:30 INFO Executor: Running task 7.0 in stage 0.0 (TID 7)
+24/04/11 09:51:30 INFO Executor: Running task 4.0 in stage 0.0 (TID 4)
+24/04/11 09:51:30 INFO Executor: Running task 5.0 in stage 0.0 (TID 5)
+24/04/11 09:51:30 INFO Executor: Running task 6.0 in stage 0.0 (TID 6)
+24/04/11 09:51:30 INFO Executor: Running task 15.0 in stage 0.0 (TID 15)
+24/04/11 09:51:30 INFO Executor: Running task 12.0 in stage 0.0 (TID 12)
+24/04/11 09:51:30 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+24/04/11 09:51:30 INFO Executor: Running task 10.0 in stage 0.0 (TID 10)
+24/04/11 09:51:30 INFO Executor: Running task 3.0 in stage 0.0 (TID 3)
+24/04/11 09:51:30 INFO Executor: Running task 8.0 in stage 0.0 (TID 8)
+24/04/11 09:51:30 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+24/04/11 09:51:30 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+24/04/11 09:51:30 INFO Executor: Running task 14.0 in stage 0.0 (TID 14)
+24/04/11 09:51:30 INFO Executor: Running task 9.0 in stage 0.0 (TID 9)
+24/04/11 09:51:31 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:31 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:31 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:31 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:31 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:31 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:31 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:31 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:31 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:31 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:31 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:31 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:31 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:31 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:31 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:31 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:31 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:31 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:31 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:31 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:31 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GrepData/part-00000-a8b0b929-bf7a-44a5-a5ed-0289379857bc-c000.txt, range: 0-31512, partition values: [empty row]
+24/04/11 09:51:31 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:31 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GrepData/part-00014-a8b0b929-bf7a-44a5-a5ed-0289379857bc-c000.txt, range: 0-31512, partition values: [empty row]
+24/04/11 09:51:31 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:31 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:31 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:31 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GrepData/part-00013-a8b0b929-bf7a-44a5-a5ed-0289379857bc-c000.txt, range: 0-31613, partition values: [empty row]
+24/04/11 09:51:31 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:31 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:31 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:31 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:31 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:31 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:31 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:31 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:31 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GrepData/part-00001-a8b0b929-bf7a-44a5-a5ed-0289379857bc-c000.txt, range: 0-31613, partition values: [empty row]
+24/04/11 09:51:31 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GrepData/part-00006-a8b0b929-bf7a-44a5-a5ed-0289379857bc-c000.txt, range: 0-31512, partition values: [empty row]
+24/04/11 09:51:31 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:31 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GrepData/part-00004-a8b0b929-bf7a-44a5-a5ed-0289379857bc-c000.txt, range: 0-31512, partition values: [empty row]
+24/04/11 09:51:31 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:31 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:31 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:31 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GrepData/part-00002-a8b0b929-bf7a-44a5-a5ed-0289379857bc-c000.txt, range: 0-31512, partition values: [empty row]
+24/04/11 09:51:31 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:31 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:31 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GrepData/part-00003-a8b0b929-bf7a-44a5-a5ed-0289379857bc-c000.txt, range: 0-31613, partition values: [empty row]
+24/04/11 09:51:31 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:31 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GrepData/part-00009-a8b0b929-bf7a-44a5-a5ed-0289379857bc-c000.txt, range: 0-31613, partition values: [empty row]
+24/04/11 09:51:31 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GrepData/part-00007-a8b0b929-bf7a-44a5-a5ed-0289379857bc-c000.txt, range: 0-31613, partition values: [empty row]
+24/04/11 09:51:31 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:31 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GrepData/part-00012-a8b0b929-bf7a-44a5-a5ed-0289379857bc-c000.txt, range: 0-31512, partition values: [empty row]
+24/04/11 09:51:31 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:31 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:51:31 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:31 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:51:31 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:31 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:31 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GrepData/part-00015-a8b0b929-bf7a-44a5-a5ed-0289379857bc-c000.txt, range: 0-31613, partition values: [empty row]
+24/04/11 09:51:31 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:31 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GrepData/part-00011-a8b0b929-bf7a-44a5-a5ed-0289379857bc-c000.txt, range: 0-31613, partition values: [empty row]
+24/04/11 09:51:31 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GrepData/part-00008-a8b0b929-bf7a-44a5-a5ed-0289379857bc-c000.txt, range: 0-31512, partition values: [empty row]
+24/04/11 09:51:31 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:51:31 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GrepData/part-00010-a8b0b929-bf7a-44a5-a5ed-0289379857bc-c000.txt, range: 0-31512, partition values: [empty row]
+24/04/11 09:51:31 INFO CodeGenerator: Code generated in 27.436517 ms
+24/04/11 09:51:31 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GrepData/part-00005-a8b0b929-bf7a-44a5-a5ed-0289379857bc-c000.txt, range: 0-31613, partition values: [empty row]
+24/04/11 09:51:31 INFO FileOutputCommitter: Saved output of task 'attempt_202404110951307225259489672647162_0000_m_000008_8' to file:/home/will/data/benchspark/GrepOut/_temporary/0/task_202404110951307225259489672647162_0000_m_000008
+24/04/11 09:51:31 INFO FileOutputCommitter: Saved output of task 'attempt_202404110951307225259489672647162_0000_m_000009_9' to file:/home/will/data/benchspark/GrepOut/_temporary/0/task_202404110951307225259489672647162_0000_m_000009
+24/04/11 09:51:31 INFO FileOutputCommitter: Saved output of task 'attempt_202404110951307225259489672647162_0000_m_000000_0' to file:/home/will/data/benchspark/GrepOut/_temporary/0/task_202404110951307225259489672647162_0000_m_000000
+24/04/11 09:51:31 INFO FileOutputCommitter: Saved output of task 'attempt_202404110951307225259489672647162_0000_m_000002_2' to file:/home/will/data/benchspark/GrepOut/_temporary/0/task_202404110951307225259489672647162_0000_m_000002
+24/04/11 09:51:31 INFO FileOutputCommitter: Saved output of task 'attempt_202404110951307225259489672647162_0000_m_000012_12' to file:/home/will/data/benchspark/GrepOut/_temporary/0/task_202404110951307225259489672647162_0000_m_000012
+24/04/11 09:51:31 INFO FileOutputCommitter: Saved output of task 'attempt_202404110951307225259489672647162_0000_m_000014_14' to file:/home/will/data/benchspark/GrepOut/_temporary/0/task_202404110951307225259489672647162_0000_m_000014
+24/04/11 09:51:31 INFO SparkHadoopMapRedUtil: attempt_202404110951307225259489672647162_0000_m_000008_8: Committed. Elapsed time: 1 ms.
+24/04/11 09:51:31 INFO SparkHadoopMapRedUtil: attempt_202404110951307225259489672647162_0000_m_000009_9: Committed. Elapsed time: 1 ms.
+24/04/11 09:51:31 INFO SparkHadoopMapRedUtil: attempt_202404110951307225259489672647162_0000_m_000012_12: Committed. Elapsed time: 1 ms.
+24/04/11 09:51:31 INFO SparkHadoopMapRedUtil: attempt_202404110951307225259489672647162_0000_m_000000_0: Committed. Elapsed time: 1 ms.
+24/04/11 09:51:31 INFO SparkHadoopMapRedUtil: attempt_202404110951307225259489672647162_0000_m_000014_14: Committed. Elapsed time: 1 ms.
+24/04/11 09:51:31 INFO SparkHadoopMapRedUtil: attempt_202404110951307225259489672647162_0000_m_000002_2: Committed. Elapsed time: 1 ms.
+24/04/11 09:51:31 INFO FileOutputCommitter: Saved output of task 'attempt_202404110951307225259489672647162_0000_m_000013_13' to file:/home/will/data/benchspark/GrepOut/_temporary/0/task_202404110951307225259489672647162_0000_m_000013
+24/04/11 09:51:31 INFO SparkHadoopMapRedUtil: attempt_202404110951307225259489672647162_0000_m_000013_13: Committed. Elapsed time: 1 ms.
+24/04/11 09:51:31 INFO FileOutputCommitter: Saved output of task 'attempt_202404110951307225259489672647162_0000_m_000011_11' to file:/home/will/data/benchspark/GrepOut/_temporary/0/task_202404110951307225259489672647162_0000_m_000011
+24/04/11 09:51:31 INFO SparkHadoopMapRedUtil: attempt_202404110951307225259489672647162_0000_m_000011_11: Committed. Elapsed time: 1 ms.
+24/04/11 09:51:31 INFO FileOutputCommitter: Saved output of task 'attempt_202404110951307225259489672647162_0000_m_000006_6' to file:/home/will/data/benchspark/GrepOut/_temporary/0/task_202404110951307225259489672647162_0000_m_000006
+24/04/11 09:51:31 INFO SparkHadoopMapRedUtil: attempt_202404110951307225259489672647162_0000_m_000006_6: Committed. Elapsed time: 1 ms.
+24/04/11 09:51:31 INFO FileOutputCommitter: Saved output of task 'attempt_202404110951307225259489672647162_0000_m_000007_7' to file:/home/will/data/benchspark/GrepOut/_temporary/0/task_202404110951307225259489672647162_0000_m_000007
+24/04/11 09:51:31 INFO SparkHadoopMapRedUtil: attempt_202404110951307225259489672647162_0000_m_000007_7: Committed. Elapsed time: 0 ms.
+24/04/11 09:51:31 INFO FileOutputCommitter: Saved output of task 'attempt_202404110951307225259489672647162_0000_m_000010_10' to file:/home/will/data/benchspark/GrepOut/_temporary/0/task_202404110951307225259489672647162_0000_m_000010
+24/04/11 09:51:31 INFO FileOutputCommitter: Saved output of task 'attempt_202404110951307225259489672647162_0000_m_000005_5' to file:/home/will/data/benchspark/GrepOut/_temporary/0/task_202404110951307225259489672647162_0000_m_000005
+24/04/11 09:51:31 INFO FileOutputCommitter: Saved output of task 'attempt_202404110951307225259489672647162_0000_m_000015_15' to file:/home/will/data/benchspark/GrepOut/_temporary/0/task_202404110951307225259489672647162_0000_m_000015
+24/04/11 09:51:31 INFO SparkHadoopMapRedUtil: attempt_202404110951307225259489672647162_0000_m_000005_5: Committed. Elapsed time: 0 ms.
+24/04/11 09:51:31 INFO SparkHadoopMapRedUtil: attempt_202404110951307225259489672647162_0000_m_000010_10: Committed. Elapsed time: 0 ms.
+24/04/11 09:51:31 INFO SparkHadoopMapRedUtil: attempt_202404110951307225259489672647162_0000_m_000015_15: Committed. Elapsed time: 0 ms.
+24/04/11 09:51:31 INFO FileOutputCommitter: Saved output of task 'attempt_202404110951307225259489672647162_0000_m_000001_1' to file:/home/will/data/benchspark/GrepOut/_temporary/0/task_202404110951307225259489672647162_0000_m_000001
+24/04/11 09:51:31 INFO SparkHadoopMapRedUtil: attempt_202404110951307225259489672647162_0000_m_000001_1: Committed. Elapsed time: 0 ms.
+24/04/11 09:51:31 INFO FileOutputCommitter: Saved output of task 'attempt_202404110951307225259489672647162_0000_m_000003_3' to file:/home/will/data/benchspark/GrepOut/_temporary/0/task_202404110951307225259489672647162_0000_m_000003
+24/04/11 09:51:31 INFO SparkHadoopMapRedUtil: attempt_202404110951307225259489672647162_0000_m_000003_3: Committed. Elapsed time: 1 ms.
+24/04/11 09:51:31 INFO FileOutputCommitter: Saved output of task 'attempt_202404110951307225259489672647162_0000_m_000004_4' to file:/home/will/data/benchspark/GrepOut/_temporary/0/task_202404110951307225259489672647162_0000_m_000004
+24/04/11 09:51:31 INFO SparkHadoopMapRedUtil: attempt_202404110951307225259489672647162_0000_m_000004_4: Committed. Elapsed time: 1 ms.
+24/04/11 09:51:31 INFO Executor: Finished task 3.0 in stage 0.0 (TID 3). 2622 bytes result sent to driver
+24/04/11 09:51:31 INFO Executor: Finished task 8.0 in stage 0.0 (TID 8). 2665 bytes result sent to driver
+24/04/11 09:51:31 INFO Executor: Finished task 11.0 in stage 0.0 (TID 11). 2665 bytes result sent to driver
+24/04/11 09:51:31 INFO Executor: Finished task 6.0 in stage 0.0 (TID 6). 2665 bytes result sent to driver
+24/04/11 09:51:31 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 2665 bytes result sent to driver
+24/04/11 09:51:31 INFO Executor: Finished task 9.0 in stage 0.0 (TID 9). 2665 bytes result sent to driver
+24/04/11 09:51:31 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 2622 bytes result sent to driver
+24/04/11 09:51:31 INFO Executor: Finished task 10.0 in stage 0.0 (TID 10). 2665 bytes result sent to driver
+24/04/11 09:51:31 INFO Executor: Finished task 7.0 in stage 0.0 (TID 7). 2622 bytes result sent to driver
+24/04/11 09:51:31 INFO Executor: Finished task 15.0 in stage 0.0 (TID 15). 2665 bytes result sent to driver
+24/04/11 09:51:31 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 2665 bytes result sent to driver
+24/04/11 09:51:31 INFO Executor: Finished task 4.0 in stage 0.0 (TID 4). 2622 bytes result sent to driver
+24/04/11 09:51:31 INFO Executor: Finished task 14.0 in stage 0.0 (TID 14). 2665 bytes result sent to driver
+24/04/11 09:51:31 INFO Executor: Finished task 5.0 in stage 0.0 (TID 5). 2665 bytes result sent to driver
+24/04/11 09:51:31 INFO Executor: Finished task 13.0 in stage 0.0 (TID 13). 2665 bytes result sent to driver
+24/04/11 09:51:31 INFO Executor: Finished task 12.0 in stage 0.0 (TID 12). 2665 bytes result sent to driver
+24/04/11 09:51:31 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 696 ms on amigo (executor driver) (1/16)
+24/04/11 09:51:31 INFO TaskSetManager: Finished task 9.0 in stage 0.0 (TID 9) in 693 ms on amigo (executor driver) (2/16)
+24/04/11 09:51:31 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 703 ms on amigo (executor driver) (3/16)
+24/04/11 09:51:31 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 697 ms on amigo (executor driver) (4/16)
+24/04/11 09:51:31 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 729 ms on amigo (executor driver) (5/16)
+24/04/11 09:51:31 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 704 ms on amigo (executor driver) (6/16)
+24/04/11 09:51:31 INFO TaskSetManager: Finished task 15.0 in stage 0.0 (TID 15) in 691 ms on amigo (executor driver) (7/16)
+24/04/11 09:51:31 INFO TaskSetManager: Finished task 11.0 in stage 0.0 (TID 11) in 695 ms on amigo (executor driver) (8/16)
+24/04/11 09:51:31 INFO TaskSetManager: Finished task 10.0 in stage 0.0 (TID 10) in 695 ms on amigo (executor driver) (9/16)
+24/04/11 09:51:31 INFO TaskSetManager: Finished task 14.0 in stage 0.0 (TID 14) in 694 ms on amigo (executor driver) (10/16)
+24/04/11 09:51:31 INFO TaskSetManager: Finished task 13.0 in stage 0.0 (TID 13) in 695 ms on amigo (executor driver) (11/16)
+24/04/11 09:51:31 INFO TaskSetManager: Finished task 7.0 in stage 0.0 (TID 7) in 701 ms on amigo (executor driver) (12/16)
+24/04/11 09:51:31 INFO TaskSetManager: Finished task 12.0 in stage 0.0 (TID 12) in 698 ms on amigo (executor driver) (13/16)
+24/04/11 09:51:31 INFO TaskSetManager: Finished task 5.0 in stage 0.0 (TID 5) in 705 ms on amigo (executor driver) (14/16)
+24/04/11 09:51:31 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 707 ms on amigo (executor driver) (15/16)
+24/04/11 09:51:31 INFO TaskSetManager: Finished task 8.0 in stage 0.0 (TID 8) in 703 ms on amigo (executor driver) (16/16)
+24/04/11 09:51:31 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+24/04/11 09:51:31 INFO DAGScheduler: ResultStage 0 (text at Grep.scala:26) finished in 0.865 s
+24/04/11 09:51:31 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+24/04/11 09:51:31 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+24/04/11 09:51:31 INFO DAGScheduler: Job 0 finished: text at Grep.scala:26, took 0.947392 s
+24/04/11 09:51:31 INFO FileFormatWriter: Start to commit write Job 94021396-9881-496c-9309-612369969da1.
+24/04/11 09:51:31 INFO FileFormatWriter: Write Job 94021396-9881-496c-9309-612369969da1 committed. Elapsed time: 22 ms.
+24/04/11 09:51:31 INFO FileFormatWriter: Finished processing stats for write job 94021396-9881-496c-9309-612369969da1.
+start_time[unix_millis]:1712821885143
+end_time[unix_millis]:1712821891495
+net_runtime[seconds]:6.352
+24/04/11 09:51:31 INFO SparkUI: Stopped Spark web UI at http://amigo:4040
+24/04/11 09:51:31 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+24/04/11 09:51:31 INFO MemoryStore: MemoryStore cleared
+24/04/11 09:51:31 INFO BlockManager: BlockManager stopped
+24/04/11 09:51:31 INFO BlockManagerMaster: BlockManagerMaster stopped
+24/04/11 09:51:31 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+24/04/11 09:51:31 INFO SparkContext: Successfully stopped SparkContext
+24/04/11 09:51:31 INFO ShutdownHookManager: Shutdown hook called
+24/04/11 09:51:31 INFO ShutdownHookManager: Deleting directory /tmp/spark-e12188bd-4c43-4680-861c-19858e94b6a4
+24/04/11 09:51:31 INFO ShutdownHookManager: Deleting directory /tmp/spark-ac1ec4a9-aaf0-4c63-98fa-65bbacf4f68f

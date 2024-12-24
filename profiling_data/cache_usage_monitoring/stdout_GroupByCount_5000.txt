@@ -1,0 +1,438 @@
+GroupByCount(/home/will/data/benchspark/GroupByCountData, /home/will/data/benchspark/GroupByCountOut)
+
+24/04/11 09:53:16 INFO SparkContext: Running Spark version 3.3.2
+24/04/11 09:53:16 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/04/11 09:53:16 INFO ResourceUtils: ==============================================================
+24/04/11 09:53:16 INFO ResourceUtils: No custom resources configured for spark.driver.
+24/04/11 09:53:16 INFO ResourceUtils: ==============================================================
+24/04/11 09:53:16 INFO SparkContext: Submitted application: GroupByCount
+24/04/11 09:53:16 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+24/04/11 09:53:16 INFO ResourceProfile: Limiting resource is cpu
+24/04/11 09:53:16 INFO ResourceProfileManager: Added ResourceProfile id: 0
+24/04/11 09:53:16 INFO SecurityManager: Changing view acls to: will
+24/04/11 09:53:16 INFO SecurityManager: Changing modify acls to: will
+24/04/11 09:53:16 INFO SecurityManager: Changing view acls groups to: 
+24/04/11 09:53:16 INFO SecurityManager: Changing modify acls groups to: 
+24/04/11 09:53:16 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(will); groups with view permissions: Set(); users  with modify permissions: Set(will); groups with modify permissions: Set()
+24/04/11 09:53:16 INFO Utils: Successfully started service 'sparkDriver' on port 35851.
+24/04/11 09:53:16 INFO SparkEnv: Registering MapOutputTracker
+24/04/11 09:53:17 INFO SparkEnv: Registering BlockManagerMaster
+24/04/11 09:53:17 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+24/04/11 09:53:17 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+24/04/11 09:53:17 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+24/04/11 09:53:17 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-96086ab0-e2f4-4af8-938b-b62191bf1334
+24/04/11 09:53:17 INFO MemoryStore: MemoryStore started with capacity 12.6 GiB
+24/04/11 09:53:17 INFO SparkEnv: Registering OutputCommitCoordinator
+24/04/11 09:53:17 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+24/04/11 09:53:17 INFO SparkContext: Added JAR file:/home/will/.sync/files/uni/research/c5-experiments/c5-experiments.git/spark/target/scala-2.12/benchspark_2.12-1.0.jar at spark://amigo:35851/jars/benchspark_2.12-1.0.jar with timestamp 1712821996511
+24/04/11 09:53:17 INFO Executor: Starting executor ID driver on host amigo
+24/04/11 09:53:17 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+24/04/11 09:53:17 INFO Executor: Fetching spark://amigo:35851/jars/benchspark_2.12-1.0.jar with timestamp 1712821996511
+24/04/11 09:53:17 INFO TransportClientFactory: Successfully created connection to amigo/130.149.248.223:35851 after 38 ms (0 ms spent in bootstraps)
+24/04/11 09:53:17 INFO Utils: Fetching spark://amigo:35851/jars/benchspark_2.12-1.0.jar to /tmp/spark-2a490b1c-9acd-4219-8a9c-3a354ba21dd8/userFiles-7150b1ef-9534-4d88-bb49-881caf1a10ae/fetchFileTemp1865532133649285489.tmp
+24/04/11 09:53:17 INFO Executor: Adding file:/tmp/spark-2a490b1c-9acd-4219-8a9c-3a354ba21dd8/userFiles-7150b1ef-9534-4d88-bb49-881caf1a10ae/benchspark_2.12-1.0.jar to class loader
+24/04/11 09:53:17 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45221.
+24/04/11 09:53:17 INFO NettyBlockTransferService: Server created on amigo:45221
+24/04/11 09:53:17 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+24/04/11 09:53:17 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, amigo, 45221, None)
+24/04/11 09:53:17 INFO BlockManagerMasterEndpoint: Registering block manager amigo:45221 with 12.6 GiB RAM, BlockManagerId(driver, amigo, 45221, None)
+24/04/11 09:53:17 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, amigo, 45221, None)
+24/04/11 09:53:17 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, amigo, 45221, None)
+24/04/11 09:53:17 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+24/04/11 09:53:17 INFO SharedState: Warehouse path is 'file:/home/will/.sync/files/uni/research/c5-experiments/c5-experiments.git/run_scripts/spark-warehouse'.
+24/04/11 09:53:18 INFO InMemoryFileIndex: It took 39 ms to list leaf files for 1 paths.
+24/04/11 09:53:19 INFO InMemoryFileIndex: It took 9 ms to list leaf files for 16 paths.
+24/04/11 09:53:21 INFO FileSourceStrategy: Pushed Filters: 
+24/04/11 09:53:21 INFO FileSourceStrategy: Post-Scan Filters: (length(trim(value#0, None)) > 0)
+24/04/11 09:53:21 INFO FileSourceStrategy: Output Data Schema: struct<value: string>
+24/04/11 09:53:21 INFO CodeGenerator: Code generated in 148.485332 ms
+24/04/11 09:53:21 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 350.2 KiB, free 12.6 GiB)
+24/04/11 09:53:21 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.1 KiB, free 12.6 GiB)
+24/04/11 09:53:21 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on amigo:45221 (size: 34.1 KiB, free: 12.6 GiB)
+24/04/11 09:53:21 INFO SparkContext: Created broadcast 0 from load at GroupByCount.scala:24
+24/04/11 09:53:21 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4241051 bytes, open cost is considered as scanning 4194304 bytes.
+24/04/11 09:53:21 INFO SparkContext: Starting job: load at GroupByCount.scala:24
+24/04/11 09:53:22 INFO DAGScheduler: Got job 0 (load at GroupByCount.scala:24) with 1 output partitions
+24/04/11 09:53:22 INFO DAGScheduler: Final stage: ResultStage 0 (load at GroupByCount.scala:24)
+24/04/11 09:53:22 INFO DAGScheduler: Parents of final stage: List()
+24/04/11 09:53:22 INFO DAGScheduler: Missing parents: List()
+24/04/11 09:53:22 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[3] at load at GroupByCount.scala:24), which has no missing parents
+24/04/11 09:53:22 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 11.8 KiB, free 12.6 GiB)
+24/04/11 09:53:22 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 5.9 KiB, free 12.6 GiB)
+24/04/11 09:53:22 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on amigo:45221 (size: 5.9 KiB, free: 12.6 GiB)
+24/04/11 09:53:22 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1513
+24/04/11 09:53:22 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[3] at load at GroupByCount.scala:24) (first 15 tasks are for partitions Vector(0))
+24/04/11 09:53:22 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+24/04/11 09:53:22 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (amigo, executor driver, partition 0, PROCESS_LOCAL, 4978 bytes) taskResourceAssignments Map()
+24/04/11 09:53:22 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+24/04/11 09:53:22 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00014-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-48080, partition values: [empty row]
+24/04/11 09:53:22 INFO CodeGenerator: Code generated in 12.753942 ms
+24/04/11 09:53:22 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1547 bytes result sent to driver
+24/04/11 09:53:22 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 359 ms on amigo (executor driver) (1/1)
+24/04/11 09:53:22 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+24/04/11 09:53:22 INFO DAGScheduler: ResultStage 0 (load at GroupByCount.scala:24) finished in 0.488 s
+24/04/11 09:53:22 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+24/04/11 09:53:22 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+24/04/11 09:53:22 INFO DAGScheduler: Job 0 finished: load at GroupByCount.scala:24, took 0.567512 s
+24/04/11 09:53:22 INFO CodeGenerator: Code generated in 11.543711 ms
+24/04/11 09:53:22 INFO FileSourceStrategy: Pushed Filters: 
+24/04/11 09:53:22 INFO FileSourceStrategy: Post-Scan Filters: 
+24/04/11 09:53:22 INFO FileSourceStrategy: Output Data Schema: struct<value: string>
+24/04/11 09:53:22 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 350.2 KiB, free 12.6 GiB)
+24/04/11 09:53:22 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 34.1 KiB, free 12.6 GiB)
+24/04/11 09:53:22 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on amigo:45221 (size: 34.1 KiB, free: 12.6 GiB)
+24/04/11 09:53:22 INFO SparkContext: Created broadcast 2 from load at GroupByCount.scala:24
+24/04/11 09:53:22 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4241051 bytes, open cost is considered as scanning 4194304 bytes.
+24/04/11 09:53:22 INFO FileSourceStrategy: Pushed Filters: 
+24/04/11 09:53:22 INFO FileSourceStrategy: Post-Scan Filters: (Contains(lower(verseText#19), god) OR Contains(lower(verseText#19), lord))
+24/04/11 09:53:22 INFO FileSourceStrategy: Output Data Schema: struct<Book: string, VerseText: string>
+24/04/11 09:53:23 INFO CodeGenerator: Code generated in 78.539723 ms
+24/04/11 09:53:23 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 350.1 KiB, free 12.6 GiB)
+24/04/11 09:53:23 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 34.1 KiB, free 12.6 GiB)
+24/04/11 09:53:23 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on amigo:45221 (size: 34.1 KiB, free: 12.6 GiB)
+24/04/11 09:53:23 INFO SparkContext: Created broadcast 3 from show at GroupByCount.scala:44
+24/04/11 09:53:23 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4241051 bytes, open cost is considered as scanning 4194304 bytes.
+24/04/11 09:53:23 INFO DAGScheduler: Registering RDD 13 (show at GroupByCount.scala:44) as input to shuffle 0
+24/04/11 09:53:23 INFO DAGScheduler: Got map stage job 1 (show at GroupByCount.scala:44) with 16 output partitions
+24/04/11 09:53:23 INFO DAGScheduler: Final stage: ShuffleMapStage 1 (show at GroupByCount.scala:44)
+24/04/11 09:53:23 INFO DAGScheduler: Parents of final stage: List()
+24/04/11 09:53:23 INFO DAGScheduler: Missing parents: List()
+24/04/11 09:53:23 INFO DAGScheduler: Submitting ShuffleMapStage 1 (MapPartitionsRDD[13] at show at GroupByCount.scala:44), which has no missing parents
+24/04/11 09:53:23 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 39.1 KiB, free 12.6 GiB)
+24/04/11 09:53:23 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 18.4 KiB, free 12.6 GiB)
+24/04/11 09:53:23 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on amigo:45221 (size: 18.4 KiB, free: 12.6 GiB)
+24/04/11 09:53:23 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1513
+24/04/11 09:53:23 INFO DAGScheduler: Submitting 16 missing tasks from ShuffleMapStage 1 (MapPartitionsRDD[13] at show at GroupByCount.scala:44) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+24/04/11 09:53:23 INFO TaskSchedulerImpl: Adding task set 1.0 with 16 tasks resource profile 0
+24/04/11 09:53:23 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (amigo, executor driver, partition 0, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:23 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 2) (amigo, executor driver, partition 1, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:23 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 3) (amigo, executor driver, partition 2, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:23 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 4) (amigo, executor driver, partition 3, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:23 INFO TaskSetManager: Starting task 4.0 in stage 1.0 (TID 5) (amigo, executor driver, partition 4, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:23 INFO TaskSetManager: Starting task 5.0 in stage 1.0 (TID 6) (amigo, executor driver, partition 5, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:23 INFO TaskSetManager: Starting task 6.0 in stage 1.0 (TID 7) (amigo, executor driver, partition 6, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:23 INFO TaskSetManager: Starting task 7.0 in stage 1.0 (TID 8) (amigo, executor driver, partition 7, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:23 INFO TaskSetManager: Starting task 8.0 in stage 1.0 (TID 9) (amigo, executor driver, partition 8, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:23 INFO TaskSetManager: Starting task 9.0 in stage 1.0 (TID 10) (amigo, executor driver, partition 9, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:23 INFO TaskSetManager: Starting task 10.0 in stage 1.0 (TID 11) (amigo, executor driver, partition 10, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:23 INFO TaskSetManager: Starting task 11.0 in stage 1.0 (TID 12) (amigo, executor driver, partition 11, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:23 INFO TaskSetManager: Starting task 12.0 in stage 1.0 (TID 13) (amigo, executor driver, partition 12, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:23 INFO TaskSetManager: Starting task 13.0 in stage 1.0 (TID 14) (amigo, executor driver, partition 13, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:23 INFO TaskSetManager: Starting task 14.0 in stage 1.0 (TID 15) (amigo, executor driver, partition 14, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:23 INFO TaskSetManager: Starting task 15.0 in stage 1.0 (TID 16) (amigo, executor driver, partition 15, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:23 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+24/04/11 09:53:23 INFO Executor: Running task 1.0 in stage 1.0 (TID 2)
+24/04/11 09:53:23 INFO Executor: Running task 2.0 in stage 1.0 (TID 3)
+24/04/11 09:53:23 INFO Executor: Running task 3.0 in stage 1.0 (TID 4)
+24/04/11 09:53:23 INFO Executor: Running task 4.0 in stage 1.0 (TID 5)
+24/04/11 09:53:23 INFO Executor: Running task 6.0 in stage 1.0 (TID 7)
+24/04/11 09:53:23 INFO Executor: Running task 5.0 in stage 1.0 (TID 6)
+24/04/11 09:53:23 INFO Executor: Running task 7.0 in stage 1.0 (TID 8)
+24/04/11 09:53:23 INFO Executor: Running task 8.0 in stage 1.0 (TID 9)
+24/04/11 09:53:23 INFO Executor: Running task 9.0 in stage 1.0 (TID 10)
+24/04/11 09:53:23 INFO Executor: Running task 10.0 in stage 1.0 (TID 11)
+24/04/11 09:53:23 INFO Executor: Running task 11.0 in stage 1.0 (TID 12)
+24/04/11 09:53:23 INFO Executor: Running task 14.0 in stage 1.0 (TID 15)
+24/04/11 09:53:23 INFO Executor: Running task 13.0 in stage 1.0 (TID 14)
+24/04/11 09:53:23 INFO Executor: Running task 12.0 in stage 1.0 (TID 13)
+24/04/11 09:53:23 INFO Executor: Running task 15.0 in stage 1.0 (TID 16)
+24/04/11 09:53:23 INFO CodeGenerator: Code generated in 18.122596 ms
+24/04/11 09:53:23 INFO CodeGenerator: Code generated in 10.618297 ms
+24/04/11 09:53:23 INFO CodeGenerator: Code generated in 10.385024 ms
+24/04/11 09:53:23 INFO BlockManagerInfo: Removed broadcast_1_piece0 on amigo:45221 in memory (size: 5.9 KiB, free: 12.6 GiB)
+24/04/11 09:53:23 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00010-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-46010, partition values: [empty row]
+24/04/11 09:53:23 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00006-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-47500, partition values: [empty row]
+24/04/11 09:53:23 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00015-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-46516, partition values: [empty row]
+24/04/11 09:53:23 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00000-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-45121, partition values: [empty row]
+24/04/11 09:53:23 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00007-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-45414, partition values: [empty row]
+24/04/11 09:53:23 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00012-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-45435, partition values: [empty row]
+24/04/11 09:53:23 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00009-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-47969, partition values: [empty row]
+24/04/11 09:53:23 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00003-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-44833, partition values: [empty row]
+24/04/11 09:53:23 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00014-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-48080, partition values: [empty row]
+24/04/11 09:53:23 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00005-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-47322, partition values: [empty row]
+24/04/11 09:53:23 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00008-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-47299, partition values: [empty row]
+24/04/11 09:53:23 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00004-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-48027, partition values: [empty row]
+24/04/11 09:53:23 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00001-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-47093, partition values: [empty row]
+24/04/11 09:53:23 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00002-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-47918, partition values: [empty row]
+24/04/11 09:53:23 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00011-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-47736, partition values: [empty row]
+24/04/11 09:53:23 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00013-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-45688, partition values: [empty row]
+24/04/11 09:53:23 INFO CodeGenerator: Code generated in 15.878277 ms
+24/04/11 09:53:23 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 2862 bytes result sent to driver
+24/04/11 09:53:23 INFO Executor: Finished task 2.0 in stage 1.0 (TID 3). 2819 bytes result sent to driver
+24/04/11 09:53:23 INFO Executor: Finished task 9.0 in stage 1.0 (TID 10). 2862 bytes result sent to driver
+24/04/11 09:53:23 INFO Executor: Finished task 12.0 in stage 1.0 (TID 13). 2819 bytes result sent to driver
+24/04/11 09:53:23 INFO Executor: Finished task 8.0 in stage 1.0 (TID 9). 2819 bytes result sent to driver
+24/04/11 09:53:23 INFO Executor: Finished task 6.0 in stage 1.0 (TID 7). 2819 bytes result sent to driver
+24/04/11 09:53:23 INFO Executor: Finished task 11.0 in stage 1.0 (TID 12). 2862 bytes result sent to driver
+24/04/11 09:53:23 INFO Executor: Finished task 3.0 in stage 1.0 (TID 4). 2819 bytes result sent to driver
+24/04/11 09:53:23 INFO Executor: Finished task 1.0 in stage 1.0 (TID 2). 2862 bytes result sent to driver
+24/04/11 09:53:23 INFO Executor: Finished task 5.0 in stage 1.0 (TID 6). 2862 bytes result sent to driver
+24/04/11 09:53:23 INFO Executor: Finished task 13.0 in stage 1.0 (TID 14). 2819 bytes result sent to driver
+24/04/11 09:53:23 INFO Executor: Finished task 14.0 in stage 1.0 (TID 15). 2819 bytes result sent to driver
+24/04/11 09:53:23 INFO Executor: Finished task 15.0 in stage 1.0 (TID 16). 2819 bytes result sent to driver
+24/04/11 09:53:23 INFO Executor: Finished task 4.0 in stage 1.0 (TID 5). 2862 bytes result sent to driver
+24/04/11 09:53:23 INFO Executor: Finished task 10.0 in stage 1.0 (TID 11). 2862 bytes result sent to driver
+24/04/11 09:53:23 INFO Executor: Finished task 7.0 in stage 1.0 (TID 8). 2862 bytes result sent to driver
+24/04/11 09:53:23 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 644 ms on amigo (executor driver) (1/16)
+24/04/11 09:53:23 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 3) in 642 ms on amigo (executor driver) (2/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 9.0 in stage 1.0 (TID 10) in 639 ms on amigo (executor driver) (3/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 8.0 in stage 1.0 (TID 9) in 641 ms on amigo (executor driver) (4/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 12.0 in stage 1.0 (TID 13) in 639 ms on amigo (executor driver) (5/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 6.0 in stage 1.0 (TID 7) in 642 ms on amigo (executor driver) (6/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 3.0 in stage 1.0 (TID 4) in 644 ms on amigo (executor driver) (7/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 11.0 in stage 1.0 (TID 12) in 642 ms on amigo (executor driver) (8/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 4.0 in stage 1.0 (TID 5) in 646 ms on amigo (executor driver) (9/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 15.0 in stage 1.0 (TID 16) in 640 ms on amigo (executor driver) (10/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 2) in 649 ms on amigo (executor driver) (11/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 14.0 in stage 1.0 (TID 15) in 642 ms on amigo (executor driver) (12/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 10.0 in stage 1.0 (TID 11) in 645 ms on amigo (executor driver) (13/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 13.0 in stage 1.0 (TID 14) in 643 ms on amigo (executor driver) (14/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 7.0 in stage 1.0 (TID 8) in 649 ms on amigo (executor driver) (15/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 5.0 in stage 1.0 (TID 6) in 649 ms on amigo (executor driver) (16/16)
+24/04/11 09:53:24 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+24/04/11 09:53:24 INFO DAGScheduler: ShuffleMapStage 1 (show at GroupByCount.scala:44) finished in 0.690 s
+24/04/11 09:53:24 INFO DAGScheduler: looking for newly runnable stages
+24/04/11 09:53:24 INFO DAGScheduler: running: Set()
+24/04/11 09:53:24 INFO DAGScheduler: waiting: Set()
+24/04/11 09:53:24 INFO DAGScheduler: failed: Set()
+24/04/11 09:53:24 INFO ShufflePartitionsUtil: For shuffle(0), advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+24/04/11 09:53:24 INFO BlockManagerInfo: Removed broadcast_4_piece0 on amigo:45221 in memory (size: 18.4 KiB, free: 12.6 GiB)
+24/04/11 09:53:24 INFO CodeGenerator: Code generated in 10.319441 ms
+24/04/11 09:53:24 INFO HashAggregateExec: spark.sql.codegen.aggregate.map.twolevel.enabled is set to true, but current version of codegened fast hashmap does not support this aggregate.
+24/04/11 09:53:24 INFO CodeGenerator: Code generated in 17.554147 ms
+24/04/11 09:53:24 INFO SparkContext: Starting job: show at GroupByCount.scala:44
+24/04/11 09:53:24 INFO DAGScheduler: Got job 2 (show at GroupByCount.scala:44) with 1 output partitions
+24/04/11 09:53:24 INFO DAGScheduler: Final stage: ResultStage 3 (show at GroupByCount.scala:44)
+24/04/11 09:53:24 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 2)
+24/04/11 09:53:24 INFO DAGScheduler: Missing parents: List()
+24/04/11 09:53:24 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[17] at show at GroupByCount.scala:44), which has no missing parents
+24/04/11 09:53:24 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 39.5 KiB, free 12.6 GiB)
+24/04/11 09:53:24 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 18.8 KiB, free 12.6 GiB)
+24/04/11 09:53:24 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on amigo:45221 (size: 18.8 KiB, free: 12.6 GiB)
+24/04/11 09:53:24 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1513
+24/04/11 09:53:24 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[17] at show at GroupByCount.scala:44) (first 15 tasks are for partitions Vector(0))
+24/04/11 09:53:24 INFO TaskSchedulerImpl: Adding task set 3.0 with 1 tasks resource profile 0
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 17) (amigo, executor driver, partition 0, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO Executor: Running task 0.0 in stage 3.0 (TID 17)
+24/04/11 09:53:24 INFO ShuffleBlockFetcherIterator: Getting 16 (38.6 KiB) non-empty blocks including 16 (38.6 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/04/11 09:53:24 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 13 ms
+24/04/11 09:53:24 INFO Executor: Finished task 0.0 in stage 3.0 (TID 17). 7119 bytes result sent to driver
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 17) in 122 ms on amigo (executor driver) (1/1)
+24/04/11 09:53:24 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+24/04/11 09:53:24 INFO DAGScheduler: ResultStage 3 (show at GroupByCount.scala:44) finished in 0.141 s
+24/04/11 09:53:24 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+24/04/11 09:53:24 INFO TaskSchedulerImpl: Killing all running tasks in stage 3: Stage finished
+24/04/11 09:53:24 INFO DAGScheduler: Job 2 finished: show at GroupByCount.scala:44, took 0.170605 s
+24/04/11 09:53:24 INFO CodeGenerator: Code generated in 8.144266 ms
+24/04/11 09:53:24 INFO CodeGenerator: Code generated in 10.997891 ms
+24/04/11 09:53:24 INFO FileSourceStrategy: Pushed Filters: 
+24/04/11 09:53:24 INFO FileSourceStrategy: Post-Scan Filters: (Contains(lower(verseText#19), god) OR Contains(lower(verseText#19), lord))
+24/04/11 09:53:24 INFO FileSourceStrategy: Output Data Schema: struct<Book: string, VerseText: string>
+24/04/11 09:53:24 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 350.1 KiB, free 12.6 GiB)
+24/04/11 09:53:24 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 34.1 KiB, free 12.6 GiB)
+24/04/11 09:53:24 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on amigo:45221 (size: 34.1 KiB, free: 12.6 GiB)
+24/04/11 09:53:24 INFO SparkContext: Created broadcast 6 from save at GroupByCount.scala:48
+24/04/11 09:53:24 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4241051 bytes, open cost is considered as scanning 4194304 bytes.
+24/04/11 09:53:24 INFO DAGScheduler: Registering RDD 21 (save at GroupByCount.scala:48) as input to shuffle 1
+24/04/11 09:53:24 INFO DAGScheduler: Got map stage job 3 (save at GroupByCount.scala:48) with 16 output partitions
+24/04/11 09:53:24 INFO DAGScheduler: Final stage: ShuffleMapStage 4 (save at GroupByCount.scala:48)
+24/04/11 09:53:24 INFO DAGScheduler: Parents of final stage: List()
+24/04/11 09:53:24 INFO DAGScheduler: Missing parents: List()
+24/04/11 09:53:24 INFO DAGScheduler: Submitting ShuffleMapStage 4 (MapPartitionsRDD[21] at save at GroupByCount.scala:48), which has no missing parents
+24/04/11 09:53:24 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 39.2 KiB, free 12.6 GiB)
+24/04/11 09:53:24 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 18.4 KiB, free 12.6 GiB)
+24/04/11 09:53:24 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on amigo:45221 (size: 18.4 KiB, free: 12.6 GiB)
+24/04/11 09:53:24 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1513
+24/04/11 09:53:24 INFO DAGScheduler: Submitting 16 missing tasks from ShuffleMapStage 4 (MapPartitionsRDD[21] at save at GroupByCount.scala:48) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+24/04/11 09:53:24 INFO TaskSchedulerImpl: Adding task set 4.0 with 16 tasks resource profile 0
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 18) (amigo, executor driver, partition 0, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 19) (amigo, executor driver, partition 1, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 2.0 in stage 4.0 (TID 20) (amigo, executor driver, partition 2, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 3.0 in stage 4.0 (TID 21) (amigo, executor driver, partition 3, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 4.0 in stage 4.0 (TID 22) (amigo, executor driver, partition 4, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 5.0 in stage 4.0 (TID 23) (amigo, executor driver, partition 5, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 6.0 in stage 4.0 (TID 24) (amigo, executor driver, partition 6, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 7.0 in stage 4.0 (TID 25) (amigo, executor driver, partition 7, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 8.0 in stage 4.0 (TID 26) (amigo, executor driver, partition 8, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 9.0 in stage 4.0 (TID 27) (amigo, executor driver, partition 9, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 10.0 in stage 4.0 (TID 28) (amigo, executor driver, partition 10, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 11.0 in stage 4.0 (TID 29) (amigo, executor driver, partition 11, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 12.0 in stage 4.0 (TID 30) (amigo, executor driver, partition 12, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 13.0 in stage 4.0 (TID 31) (amigo, executor driver, partition 13, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 14.0 in stage 4.0 (TID 32) (amigo, executor driver, partition 14, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO TaskSetManager: Starting task 15.0 in stage 4.0 (TID 33) (amigo, executor driver, partition 15, PROCESS_LOCAL, 4967 bytes) taskResourceAssignments Map()
+24/04/11 09:53:24 INFO Executor: Running task 1.0 in stage 4.0 (TID 19)
+24/04/11 09:53:24 INFO Executor: Running task 0.0 in stage 4.0 (TID 18)
+24/04/11 09:53:24 INFO Executor: Running task 2.0 in stage 4.0 (TID 20)
+24/04/11 09:53:24 INFO Executor: Running task 4.0 in stage 4.0 (TID 22)
+24/04/11 09:53:24 INFO Executor: Running task 3.0 in stage 4.0 (TID 21)
+24/04/11 09:53:24 INFO Executor: Running task 5.0 in stage 4.0 (TID 23)
+24/04/11 09:53:24 INFO Executor: Running task 6.0 in stage 4.0 (TID 24)
+24/04/11 09:53:24 INFO Executor: Running task 7.0 in stage 4.0 (TID 25)
+24/04/11 09:53:24 INFO Executor: Running task 9.0 in stage 4.0 (TID 27)
+24/04/11 09:53:24 INFO Executor: Running task 11.0 in stage 4.0 (TID 29)
+24/04/11 09:53:24 INFO Executor: Running task 15.0 in stage 4.0 (TID 33)
+24/04/11 09:53:24 INFO Executor: Running task 12.0 in stage 4.0 (TID 30)
+24/04/11 09:53:24 INFO Executor: Running task 14.0 in stage 4.0 (TID 32)
+24/04/11 09:53:24 INFO Executor: Running task 8.0 in stage 4.0 (TID 26)
+24/04/11 09:53:24 INFO Executor: Running task 10.0 in stage 4.0 (TID 28)
+24/04/11 09:53:24 INFO Executor: Running task 13.0 in stage 4.0 (TID 31)
+24/04/11 09:53:24 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00001-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-47093, partition values: [empty row]
+24/04/11 09:53:24 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00013-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-45688, partition values: [empty row]
+24/04/11 09:53:24 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00003-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-44833, partition values: [empty row]
+24/04/11 09:53:24 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00002-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-47918, partition values: [empty row]
+24/04/11 09:53:24 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00014-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-48080, partition values: [empty row]
+24/04/11 09:53:24 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00004-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-48027, partition values: [empty row]
+24/04/11 09:53:24 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00008-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-47299, partition values: [empty row]
+24/04/11 09:53:24 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00009-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-47969, partition values: [empty row]
+24/04/11 09:53:24 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00007-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-45414, partition values: [empty row]
+24/04/11 09:53:24 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00012-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-45435, partition values: [empty row]
+24/04/11 09:53:24 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00011-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-47736, partition values: [empty row]
+24/04/11 09:53:24 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00015-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-46516, partition values: [empty row]
+24/04/11 09:53:24 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00005-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-47322, partition values: [empty row]
+24/04/11 09:53:24 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00010-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-46010, partition values: [empty row]
+24/04/11 09:53:24 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00006-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-47500, partition values: [empty row]
+24/04/11 09:53:24 INFO FileScanRDD: Reading File path: file:///home/will/data/benchspark/GroupByCountData/part-00000-8ac89f2c-68c2-4dfd-8b67-0eb7264d9d0a-c000.csv, range: 0-45121, partition values: [empty row]
+24/04/11 09:53:24 INFO Executor: Finished task 7.0 in stage 4.0 (TID 25). 2819 bytes result sent to driver
+24/04/11 09:53:24 INFO Executor: Finished task 15.0 in stage 4.0 (TID 33). 2819 bytes result sent to driver
+24/04/11 09:53:24 INFO BlockManagerInfo: Removed broadcast_5_piece0 on amigo:45221 in memory (size: 18.8 KiB, free: 12.6 GiB)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 15.0 in stage 4.0 (TID 33) in 384 ms on amigo (executor driver) (1/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 7.0 in stage 4.0 (TID 25) in 393 ms on amigo (executor driver) (2/16)
+24/04/11 09:53:24 INFO Executor: Finished task 11.0 in stage 4.0 (TID 29). 2819 bytes result sent to driver
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 11.0 in stage 4.0 (TID 29) in 397 ms on amigo (executor driver) (3/16)
+24/04/11 09:53:24 INFO Executor: Finished task 12.0 in stage 4.0 (TID 30). 2819 bytes result sent to driver
+24/04/11 09:53:24 INFO Executor: Finished task 13.0 in stage 4.0 (TID 31). 2819 bytes result sent to driver
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 13.0 in stage 4.0 (TID 31) in 401 ms on amigo (executor driver) (4/16)
+24/04/11 09:53:24 INFO BlockManagerInfo: Removed broadcast_3_piece0 on amigo:45221 in memory (size: 34.1 KiB, free: 12.6 GiB)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 12.0 in stage 4.0 (TID 30) in 402 ms on amigo (executor driver) (5/16)
+24/04/11 09:53:24 INFO Executor: Finished task 10.0 in stage 4.0 (TID 28). 2819 bytes result sent to driver
+24/04/11 09:53:24 INFO Executor: Finished task 2.0 in stage 4.0 (TID 20). 2819 bytes result sent to driver
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 10.0 in stage 4.0 (TID 28) in 411 ms on amigo (executor driver) (6/16)
+24/04/11 09:53:24 INFO Executor: Finished task 4.0 in stage 4.0 (TID 22). 2819 bytes result sent to driver
+24/04/11 09:53:24 INFO Executor: Finished task 1.0 in stage 4.0 (TID 19). 2819 bytes result sent to driver
+24/04/11 09:53:24 INFO Executor: Finished task 14.0 in stage 4.0 (TID 32). 2819 bytes result sent to driver
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 4.0 in stage 4.0 (TID 22) in 417 ms on amigo (executor driver) (7/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 19) in 419 ms on amigo (executor driver) (8/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 2.0 in stage 4.0 (TID 20) in 420 ms on amigo (executor driver) (9/16)
+24/04/11 09:53:24 INFO Executor: Finished task 9.0 in stage 4.0 (TID 27). 2819 bytes result sent to driver
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 14.0 in stage 4.0 (TID 32) in 414 ms on amigo (executor driver) (10/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 9.0 in stage 4.0 (TID 27) in 418 ms on amigo (executor driver) (11/16)
+24/04/11 09:53:24 INFO Executor: Finished task 5.0 in stage 4.0 (TID 23). 2819 bytes result sent to driver
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 5.0 in stage 4.0 (TID 23) in 423 ms on amigo (executor driver) (12/16)
+24/04/11 09:53:24 INFO Executor: Finished task 3.0 in stage 4.0 (TID 21). 2819 bytes result sent to driver
+24/04/11 09:53:24 INFO BlockManagerInfo: Removed broadcast_0_piece0 on amigo:45221 in memory (size: 34.1 KiB, free: 12.6 GiB)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 3.0 in stage 4.0 (TID 21) in 428 ms on amigo (executor driver) (13/16)
+24/04/11 09:53:24 INFO Executor: Finished task 8.0 in stage 4.0 (TID 26). 2819 bytes result sent to driver
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 8.0 in stage 4.0 (TID 26) in 426 ms on amigo (executor driver) (14/16)
+24/04/11 09:53:24 INFO Executor: Finished task 6.0 in stage 4.0 (TID 24). 2819 bytes result sent to driver
+24/04/11 09:53:24 INFO Executor: Finished task 0.0 in stage 4.0 (TID 18). 2819 bytes result sent to driver
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 6.0 in stage 4.0 (TID 24) in 429 ms on amigo (executor driver) (15/16)
+24/04/11 09:53:24 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 18) in 432 ms on amigo (executor driver) (16/16)
+24/04/11 09:53:24 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+24/04/11 09:53:24 INFO BlockManagerInfo: Removed broadcast_2_piece0 on amigo:45221 in memory (size: 34.1 KiB, free: 12.6 GiB)
+24/04/11 09:53:24 INFO DAGScheduler: ShuffleMapStage 4 (save at GroupByCount.scala:48) finished in 0.446 s
+24/04/11 09:53:24 INFO DAGScheduler: looking for newly runnable stages
+24/04/11 09:53:24 INFO DAGScheduler: running: Set()
+24/04/11 09:53:24 INFO DAGScheduler: waiting: Set()
+24/04/11 09:53:24 INFO DAGScheduler: failed: Set()
+24/04/11 09:53:25 INFO ShufflePartitionsUtil: For shuffle(1), advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+24/04/11 09:53:25 INFO HashAggregateExec: spark.sql.codegen.aggregate.map.twolevel.enabled is set to true, but current version of codegened fast hashmap does not support this aggregate.
+24/04/11 09:53:25 INFO CodeGenerator: Code generated in 8.953251 ms
+24/04/11 09:53:25 INFO SparkContext: Starting job: save at GroupByCount.scala:48
+24/04/11 09:53:25 INFO DAGScheduler: Got job 4 (save at GroupByCount.scala:48) with 1 output partitions
+24/04/11 09:53:25 INFO DAGScheduler: Final stage: ResultStage 6 (save at GroupByCount.scala:48)
+24/04/11 09:53:25 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 5)
+24/04/11 09:53:25 INFO DAGScheduler: Missing parents: List()
+24/04/11 09:53:25 INFO DAGScheduler: Submitting ResultStage 6 (MapPartitionsRDD[26] at save at GroupByCount.scala:48), which has no missing parents
+24/04/11 09:53:25 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 39.3 KiB, free 12.6 GiB)
+24/04/11 09:53:25 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 18.8 KiB, free 12.6 GiB)
+24/04/11 09:53:25 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on amigo:45221 (size: 18.8 KiB, free: 12.6 GiB)
+24/04/11 09:53:25 INFO SparkContext: Created broadcast 8 from broadcast at DAGScheduler.scala:1513
+24/04/11 09:53:25 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 6 (MapPartitionsRDD[26] at save at GroupByCount.scala:48) (first 15 tasks are for partitions Vector(0))
+24/04/11 09:53:25 INFO TaskSchedulerImpl: Adding task set 6.0 with 1 tasks resource profile 0
+24/04/11 09:53:25 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 34) (amigo, executor driver, partition 0, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+24/04/11 09:53:25 INFO Executor: Running task 0.0 in stage 6.0 (TID 34)
+24/04/11 09:53:25 INFO ShuffleBlockFetcherIterator: Getting 16 (38.6 KiB) non-empty blocks including 16 (38.6 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/04/11 09:53:25 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+24/04/11 09:53:25 INFO CodeGenerator: Code generated in 9.708877 ms
+24/04/11 09:53:25 INFO Executor: Finished task 0.0 in stage 6.0 (TID 34). 5988 bytes result sent to driver
+24/04/11 09:53:25 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 34) in 52 ms on amigo (executor driver) (1/1)
+24/04/11 09:53:25 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+24/04/11 09:53:25 INFO DAGScheduler: ResultStage 6 (save at GroupByCount.scala:48) finished in 0.062 s
+24/04/11 09:53:25 INFO DAGScheduler: Job 4 is finished. Cancelling potential speculative or zombie tasks for this job
+24/04/11 09:53:25 INFO TaskSchedulerImpl: Killing all running tasks in stage 6: Stage finished
+24/04/11 09:53:25 INFO DAGScheduler: Job 4 finished: save at GroupByCount.scala:48, took 0.071554 s
+24/04/11 09:53:25 INFO DAGScheduler: Registering RDD 27 (save at GroupByCount.scala:48) as input to shuffle 2
+24/04/11 09:53:25 INFO DAGScheduler: Got map stage job 5 (save at GroupByCount.scala:48) with 1 output partitions
+24/04/11 09:53:25 INFO DAGScheduler: Final stage: ShuffleMapStage 8 (save at GroupByCount.scala:48)
+24/04/11 09:53:25 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 7)
+24/04/11 09:53:25 INFO DAGScheduler: Missing parents: List()
+24/04/11 09:53:25 INFO DAGScheduler: Submitting ShuffleMapStage 8 (MapPartitionsRDD[27] at save at GroupByCount.scala:48), which has no missing parents
+24/04/11 09:53:25 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 40.5 KiB, free 12.6 GiB)
+24/04/11 09:53:25 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 19.3 KiB, free 12.6 GiB)
+24/04/11 09:53:25 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on amigo:45221 (size: 19.3 KiB, free: 12.6 GiB)
+24/04/11 09:53:25 INFO SparkContext: Created broadcast 9 from broadcast at DAGScheduler.scala:1513
+24/04/11 09:53:25 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 8 (MapPartitionsRDD[27] at save at GroupByCount.scala:48) (first 15 tasks are for partitions Vector(0))
+24/04/11 09:53:25 INFO TaskSchedulerImpl: Adding task set 8.0 with 1 tasks resource profile 0
+24/04/11 09:53:25 INFO TaskSetManager: Starting task 0.0 in stage 8.0 (TID 35) (amigo, executor driver, partition 0, NODE_LOCAL, 4442 bytes) taskResourceAssignments Map()
+24/04/11 09:53:25 INFO Executor: Running task 0.0 in stage 8.0 (TID 35)
+24/04/11 09:53:25 INFO ShuffleBlockFetcherIterator: Getting 16 (38.6 KiB) non-empty blocks including 16 (38.6 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/04/11 09:53:25 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+24/04/11 09:53:25 INFO Executor: Finished task 0.0 in stage 8.0 (TID 35). 4060 bytes result sent to driver
+24/04/11 09:53:25 INFO TaskSetManager: Finished task 0.0 in stage 8.0 (TID 35) in 36 ms on amigo (executor driver) (1/1)
+24/04/11 09:53:25 INFO TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool 
+24/04/11 09:53:25 INFO DAGScheduler: ShuffleMapStage 8 (save at GroupByCount.scala:48) finished in 0.049 s
+24/04/11 09:53:25 INFO DAGScheduler: looking for newly runnable stages
+24/04/11 09:53:25 INFO DAGScheduler: running: Set()
+24/04/11 09:53:25 INFO DAGScheduler: waiting: Set()
+24/04/11 09:53:25 INFO DAGScheduler: failed: Set()
+24/04/11 09:53:25 INFO ShufflePartitionsUtil: For shuffle(2), advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+24/04/11 09:53:25 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:53:25 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:53:25 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:53:25 INFO CodeGenerator: Code generated in 13.383012 ms
+24/04/11 09:53:25 INFO SparkContext: Starting job: save at GroupByCount.scala:48
+24/04/11 09:53:25 INFO DAGScheduler: Got job 6 (save at GroupByCount.scala:48) with 1 output partitions
+24/04/11 09:53:25 INFO DAGScheduler: Final stage: ResultStage 11 (save at GroupByCount.scala:48)
+24/04/11 09:53:25 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 10)
+24/04/11 09:53:25 INFO DAGScheduler: Missing parents: List()
+24/04/11 09:53:25 INFO DAGScheduler: Submitting ResultStage 11 (MapPartitionsRDD[29] at save at GroupByCount.scala:48), which has no missing parents
+24/04/11 09:53:25 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 235.9 KiB, free 12.6 GiB)
+24/04/11 09:53:25 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 87.5 KiB, free 12.6 GiB)
+24/04/11 09:53:25 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on amigo:45221 (size: 87.5 KiB, free: 12.6 GiB)
+24/04/11 09:53:25 INFO SparkContext: Created broadcast 10 from broadcast at DAGScheduler.scala:1513
+24/04/11 09:53:25 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 11 (MapPartitionsRDD[29] at save at GroupByCount.scala:48) (first 15 tasks are for partitions Vector(0))
+24/04/11 09:53:25 INFO TaskSchedulerImpl: Adding task set 11.0 with 1 tasks resource profile 0
+24/04/11 09:53:25 INFO TaskSetManager: Starting task 0.0 in stage 11.0 (TID 36) (amigo, executor driver, partition 0, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+24/04/11 09:53:25 INFO Executor: Running task 0.0 in stage 11.0 (TID 36)
+24/04/11 09:53:25 INFO ShuffleBlockFetcherIterator: Getting 1 (3.0 KiB) non-empty blocks including 1 (3.0 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/04/11 09:53:25 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+24/04/11 09:53:25 INFO CodeGenerator: Code generated in 7.626244 ms
+24/04/11 09:53:25 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/04/11 09:53:25 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/04/11 09:53:25 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+24/04/11 09:53:25 INFO FileOutputCommitter: Saved output of task 'attempt_202404110953254847913773650846028_0011_m_000000_36' to file:/home/will/data/benchspark/GroupByCountOut/_temporary/0/task_202404110953254847913773650846028_0011_m_000000
+24/04/11 09:53:25 INFO SparkHadoopMapRedUtil: attempt_202404110953254847913773650846028_0011_m_000000_36: Committed. Elapsed time: 0 ms.
+24/04/11 09:53:25 INFO Executor: Finished task 0.0 in stage 11.0 (TID 36). 5819 bytes result sent to driver
+24/04/11 09:53:25 INFO TaskSetManager: Finished task 0.0 in stage 11.0 (TID 36) in 132 ms on amigo (executor driver) (1/1)
+24/04/11 09:53:25 INFO TaskSchedulerImpl: Removed TaskSet 11.0, whose tasks have all completed, from pool 
+24/04/11 09:53:25 INFO DAGScheduler: ResultStage 11 (save at GroupByCount.scala:48) finished in 0.171 s
+24/04/11 09:53:25 INFO DAGScheduler: Job 6 is finished. Cancelling potential speculative or zombie tasks for this job
+24/04/11 09:53:25 INFO TaskSchedulerImpl: Killing all running tasks in stage 11: Stage finished
+24/04/11 09:53:25 INFO DAGScheduler: Job 6 finished: save at GroupByCount.scala:48, took 0.178998 s
+24/04/11 09:53:25 INFO FileFormatWriter: Start to commit write Job 008a7bb6-5271-4476-b03e-9da725ec99ab.
+24/04/11 09:53:25 INFO FileFormatWriter: Write Job 008a7bb6-5271-4476-b03e-9da725ec99ab committed. Elapsed time: 13 ms.
+24/04/11 09:53:25 INFO FileFormatWriter: Finished processing stats for write job 008a7bb6-5271-4476-b03e-9da725ec99ab.
+start_time[unix_millis]:1712821996511
+end_time[unix_millis]:1712822005507
+net_runtime[seconds]:8.996
+24/04/11 09:53:25 INFO SparkUI: Stopped Spark web UI at http://amigo:4040
+24/04/11 09:53:25 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+24/04/11 09:53:25 INFO MemoryStore: MemoryStore cleared
+24/04/11 09:53:25 INFO BlockManager: BlockManager stopped
+24/04/11 09:53:25 INFO BlockManagerMaster: BlockManagerMaster stopped
+24/04/11 09:53:25 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+24/04/11 09:53:25 INFO SparkContext: Successfully stopped SparkContext
+24/04/11 09:53:25 INFO ShutdownHookManager: Shutdown hook called
+24/04/11 09:53:25 INFO ShutdownHookManager: Deleting directory /tmp/spark-41c45e22-7c02-46dd-8369-3d11092bb629
+24/04/11 09:53:25 INFO ShutdownHookManager: Deleting directory /tmp/spark-2a490b1c-9acd-4219-8a9c-3a354ba21dd8
